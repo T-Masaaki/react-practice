@@ -4,11 +4,11 @@ import VisibleTodoList from '../containers/VisibleTodoList'
 import AddTodo from '../containers/AddTodo';
 import CountableFooter from '../containers/CountableFooter'
 
-const App = () => {
+const App = ({match: { params }}) => {
   return (
     <div className="App">
       <AddTodo />
-      <VisibleTodoList />
+      <VisibleTodoList filter={params.filter || 'SHOW_ALL'} />
       <CountableFooter />
     </div>
   );
